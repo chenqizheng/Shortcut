@@ -1,15 +1,35 @@
 package com.yonyou.shortcut;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 /**
  * Created by Chen on 2017/1/6.
  */
 
+
+@DatabaseTable(tableName = "Action")
 public class Action implements Cloneable {
+    @DatabaseField(generatedId = true)
+    private int id;
+    @DatabaseField()
     private String name;
+    @DatabaseField()
     private String action;
+    @DatabaseField()
     private String protocol;
+    @DatabaseField()
     private String value;
+    @DatabaseField()
     private int iconResId;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

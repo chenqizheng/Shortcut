@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class ShortCutAddActivity extends AppCompatActivity {
 
     private EditText nameEt;
     private EditText valueEt;
@@ -56,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
         shortCutAction.setName(nameEt.getText().toString());
         shortCutAction.setValue(valueEt.getText().toString());
         ShortCutUtils.createShortCut(getApplicationContext(), shortCutAction);
+        new ActionDao(this).add(shortCutAction);
         Toast.makeText(this, "Create Success", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
 }
