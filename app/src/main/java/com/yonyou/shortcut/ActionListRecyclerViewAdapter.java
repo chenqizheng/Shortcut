@@ -38,7 +38,7 @@ public class ActionListRecyclerViewAdapter extends RecyclerView.Adapter<ActionLi
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getId() + "");
+        holder.mIdView.setText((position + 1) + "");
         holder.mContentView.setText(mValues.get(position).getName() + "  " + mValues.get(position).getValue());
 
         holder.mDelview.setOnClickListener(new View.OnClickListener() {
